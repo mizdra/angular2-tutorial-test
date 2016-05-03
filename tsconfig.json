@@ -7,7 +7,6 @@
         "emitDecoratorMetadata": true,
         "removeComments": false,
         "preserveConstEnums": true,
-        "experimentalDecorators": true,
         "declaration": false,
         "moduleResolution": "node"
     }
