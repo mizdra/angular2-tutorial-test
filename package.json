@@ -6,10 +6,10 @@
   "scripts": {
     "start": "npm run watch",
     "build": "npm run build:ts && npm run build:css",
-    "build:ts": "browserify -v -d -o src/bundle.js -p [ tsify ] src/scripts/app.ts",
+    "build:ts": "browserify -v -d -o src/bundle.js -p [ tsify ] src/scripts/index.ts",
     "build:css": "postcss --map.inline -c postcss.json",
     "watch": "npm run watch:ts & npm run watch:css & npm run watch:html",
-    "watch:ts": "watchify -v -d -o src/bundle.js -p [ tsify ] src/scripts/app.ts",
+    "watch:ts": "watchify -v -d -o src/bundle.js -p [ tsify ] src/scripts/index.ts",
     "watch:css": "postcss -w --map.inline -c postcss.json",
     "watch:html": "browser-sync start --server src --files 'src/index.html, src/bundle.js, src/bundle.css'",
     "postinstall": "typings install",
@@ -31,8 +31,7 @@
     "@angular/core": "^2.0.0-rc.0",
     "@angular/platform-browser": "^2.0.0-rc.0",
     "@angular/platform-browser-dynamic": "^2.0.0-rc.0",
-    "es6-shim": "^0.35.0",
-    "reflect-metadata": "^0.1.2",
+    "core-js": "^2.3.0",
     "rxjs": "5.0.0-beta.6",
     "zone.js": "^0.6.12"
   },
