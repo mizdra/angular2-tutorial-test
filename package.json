@@ -4,14 +4,8 @@
   "description": "Play Angular2 tutorial",
   "main": "index.js",
   "scripts": {
-    "start": "npm run watch",
-    "build": "npm run build:ts && npm run build:css",
-    "build:ts": "browserify -v -d -o src/bundle.js -p [ tsify ] src/scripts/index.ts",
-    "build:css": "postcss --map.inline -c postcss.json",
-    "watch": "npm run watch:ts & npm run watch:css & npm run watch:html",
-    "watch:ts": "watchify -v -d -o src/bundle.js -p [ tsify ] src/scripts/index.ts",
-    "watch:css": "postcss -w --map.inline -c postcss.json",
-    "watch:html": "browser-sync start --server src --files 'src/index.html, src/bundle.js, src/bundle.css'",
+    "start": "webpack-dev-server --content-base ./src --hot --inline --open",
+    "build": "webpack --config webpack.config.js",
     "postinstall": "typings install",
     "lint": "tslint src/scripts/**/*.ts"
   },
@@ -36,15 +30,11 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
-    "browser-sync": "^2.12.5",
-    "browserify": "^13.0.0",
-    "postcss-cli": "^2.5.2",
-    "postcss-cssnext": "^2.5.2",
-    "postcss-import": "^8.1.0",
-    "tsify": "^0.14.1",
+    "awesome-typescript-loader": "^0.17.0",
     "tslint": "^3.8.1",
     "typescript": "^1.8.10",
     "typings": "^0.8.1",
-    "watchify": "^3.7.0"
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
   }
 }

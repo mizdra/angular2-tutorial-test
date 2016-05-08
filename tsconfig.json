@@ -9,5 +9,8 @@
         "preserveConstEnums": true,
         "declaration": false,
         "moduleResolution": "node"
-    }
+    },
+    "files": [
+        "./typings/browser.d.ts"
+    ]
 }

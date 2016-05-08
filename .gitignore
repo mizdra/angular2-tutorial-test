@@ -66,6 +66,6 @@ Temporary Items
 
 
 ### User
-bundle.css
 bundle.js
+bundle.js.map
 typings
